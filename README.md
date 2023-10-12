@@ -1,15 +1,15 @@
 <header>
 
 <!--
-  <<< Author notes: Course header >>>
+  <<< Author notes: Heatmaps with cpp and python via shared memory. >>>
   Include a 1280×640 image, course title in sentence case, and a concise description in emphasis.
   In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
   Add your open source license, GitHub uses MIT license.
 -->
 
-# GitHub Pages
+# GitHub Page for Heatmaps with cpp + python via shared memory.
 
-_Create a site or blog from your GitHub repositories with GitHub Pages._
+10/15/23 This page is underconstruction.  Expect version 1.0 available in a few days._
 
 </header>
 
