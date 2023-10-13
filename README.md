@@ -7,9 +7,10 @@
   Add your open source license, GitHub uses MIT license.
 -->
 
-# GitHub Page for Heatmaps with cpp + python via shared memory.
+# GitHub Page for displaying Heatmaps of telemetry data with cpp + python via shared memory.
 
-10/15/23 This page is underconstruction.  Expect version 1.0 available in a few days._
+10/15/23 This page is underconstruction.  Expect version 1.0 available in a few days.
+This software is currently tested _
 
 </header>
 
@@ -20,6 +21,20 @@
   Link to docs.github.com for further explanations.
   Encourage users to open new tabs for steps!
 -->
+## Telemetry data
+This is raw data that we want to visualize to better understand its meaning.
+The word telemetry describes an embedded system or application is generating the data.
+For example a buffer is shared between an FPGA device and a linux host.
+A more specific example is a infrared camera that sampling pictures of your home furnaace.
+* Samples are taken at a periodic rate and we want to animate to observer changes.
+This project has a C++ program called "simSystemWithTelemetry" for an imaginary system of telemetry data.
+* There are 8 threads with 8 entryies per thread, thus 64 32-bit entries per sample(frame).
+* There are 64 samples(frames) taken.
+* To generate a color we count the #'s of 1's(bits) in the 32-bit entry, thus color will increase over time.
+
+## Heatmaps
+An example heatmap of telemetry data for the 64th frame of "simSystemWithTelemetry".
+![example heatmap](heatmap.jpg)
 
 ## Step 1: Enable GitHub Pages
 
