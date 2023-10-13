@@ -26,12 +26,15 @@ Telemetry automatically collects, transmits and measures data from ***remote sou
 using sensors and other devices to collect data. 
 It uses communication systems to transmit the data back to a ***central location***. 
 Subsequently, the data is ***analyzed*** to ***monitor*** and control the remote system.
-## Visualize an example
+## A use case of telemetry to help visualize.
 Consider we want a system to look for heat lost of your home furnace.  A infrared camera could watch the furnace.
-A laptop could be connected via ethernet to the camera to display heatmaps. The ***remote source*** would be the infrared camera.
-The ***central location*** would be shared memory on the laptop.
-over ethernet.  The ***monitor*** could be a cpp program that utilizes ethernet to control the camera and writes
-data to shared memory.  Python could be utilized to displaying animated heatmaps: ***analysis*** by reading
+A laptop could be connected via ethernet to the camera to display heatmaps.
+* The ***remote source*** would be the infrared camera.
+* The ***central location*** would be shared memory on the laptop.
+over ethernet.
+* The ***monitor*** could be a cpp program that utilizes ethernet to control the camera and writes
+data to shared memory.
+* Python could be utilized to displaying animated heatmaps: ***analysis*** by reading
 shared memory.  Each frame(sample) in the animation is a still camera shot of color indicating heat.    
 ## This project has been tested under ubuntu.
 The ***remote source*** in this case is a python/cpp programs running on ubuntu that write to shared memory rather than a device.
