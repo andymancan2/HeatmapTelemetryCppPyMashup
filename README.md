@@ -10,7 +10,7 @@
 # GitHub Page for displaying Heatmaps of telemetry data with cpp + python via shared memory.
 
 10/15/23 This page is underconstruction.  Expect version 1.0 available in a few days.
-This software is currently tested _
+This software is currently tested with ubuntu.
 
 </header>
 
@@ -21,19 +21,28 @@ This software is currently tested _
   Link to docs.github.com for further explanations.
   Encourage users to open new tabs for steps!
 -->
-## Telemetry data
+## What is telemetry?
+Telemetry automatically collects, transmits and measures data from remote sources,
+using sensors and other devices to collect data. 
+It uses communication systems to transmit the data back to a central location. 
+Subsequently, the data is analyzed to monitor and control the remote system.
+## This project has been tested under ubuntu.
+There is python/cpp code for test purposes of reading and writing shared memory.
+## Abstract uses of mixing python and cpp.
+Overall the abstract system under test is cpp program that to writes to shared memory. 
+Overall python is used to display an animated heatmap of telemetry data by reading shared memory.
+### Example remote system: "simSystemWithTelemetry"
 This is raw data that we want to visualize to better understand its meaning.
-The word telemetry describes an embedded system or application is generating the data.
+The word telemetry describes  an embedded system or application that is generating the data.
 For example a buffer is shared between an FPGA device and a linux host.
-A more specific example is a infrared camera that sampling pictures of your home furnaace.
+A more specific example is a infrared camera that sampling pictures of your home furnace.
 * Samples are taken at a periodic rate and we want to animate to observer changes.
 This project has a C++ program called "simSystemWithTelemetry" for an imaginary system of telemetry data.
 * There are 8 threads with 8 entryies per thread, thus 64 32-bit entries per sample(frame).
 * There are 64 samples(frames) taken.
 * To generate a color we count the #'s of 1's(bits) in the 32-bit entry, thus color will increase over time.
-
-## Heatmaps
-An example heatmap of telemetry data for the 64th frame of "simSystemWithTelemetry".
+### Example heatmap
+The example heatmap below is telemetry data for the 64th frame of "simSystemWithTelemetry".
 ![example heatmap](Heatmap.jpg)
 
 ## Step 1: Enable GitHub Pages
