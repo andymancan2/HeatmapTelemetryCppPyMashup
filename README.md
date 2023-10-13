@@ -34,7 +34,7 @@ This project has a C++ program called "simSystemWithTelemetry" for an imaginary 
 
 ## Heatmaps
 An example heatmap of telemetry data for the 64th frame of "simSystemWithTelemetry".
-![example heatmap](heatmap.jpg)
+![example heatmap](Heatmap.jpg)
 
 ## Step 1: Enable GitHub Pages
 
