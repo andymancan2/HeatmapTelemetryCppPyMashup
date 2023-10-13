@@ -22,28 +22,41 @@ This software is currently tested with ubuntu.
   Encourage users to open new tabs for steps!
 -->
 ## What is telemetry?
-Telemetry automatically collects, transmits and measures data from remote sources,
+Telemetry automatically collects, transmits and measures data from ***remote sources***,
 using sensors and other devices to collect data. 
-It uses communication systems to transmit the data back to a central location. 
-Subsequently, the data is analyzed to monitor and control the remote system.
+It uses communication systems to transmit the data back to a ***central location***. 
+Subsequently, the data is ***analyzed*** to ***monitor*** and control the remote system.
+## Visualize an example
+Consider we want a system to look for heat lost of your home furnace.  A infrared camera could watch the furnace.
+A laptop could be connected via ethernet to the camera to display heatmaps. The ***remote source*** would be the infrared camera.
+The ***central location*** would be shared memory on the laptop.
+over ethernet.  The ***monitor*** could be a cpp program that utilizes ethernet to control the camera and writes
+data to shared memory.  Python could be utilized to displaying animated heatmaps: ***analysis*** by reading
+shared memory.  Each frame(sample) in the animation is a still camera shot of color indicating heat.    
 ## This project has been tested under ubuntu.
-There is python/cpp code for test purposes of reading and writing shared memory.
-## Abstract uses of mixing python and cpp.
-Overall the abstract system under test is cpp program that to writes to shared memory. 
-Overall python is used to display an animated heatmap of telemetry data by reading shared memory.
+The ***remote source*** in this case is a python/cpp programs running on ubuntu that write to shared memory rather than a device.
+The ***central location*** is shared memory where this project provides examples how to mix python and cpp.
+The ***analysis*** is done by a python program to read shared memory to display an animated heatmap.
 ### Example remote system: "simSystemWithTelemetry"
 This is raw data that we want to visualize to better understand its meaning.
-The word telemetry describes  an embedded system or application that is generating the data.
-For example a buffer is shared between an FPGA device and a linux host.
-A more specific example is a infrared camera that sampling pictures of your home furnace.
 * Samples are taken at a periodic rate and we want to animate to observer changes.
-This project has a C++ program called "simSystemWithTelemetry" for an imaginary system of telemetry data.
+This project is a C++ program called "simSystemWithTelemetry" for an imaginary system of telemetry data.
 * There are 8 threads with 8 entryies per thread, thus 64 32-bit entries per sample(frame).
 * There are 64 samples(frames) taken.
 * To generate a color we count the #'s of 1's(bits) in the 32-bit entry, thus color will increase over time.
 ### Example heatmap
 The example heatmap below is telemetry data for the 64th frame of "simSystemWithTelemetry".
 ![example heatmap](Heatmap.jpg)
+
+## UML class diagram
+This diagram is cpp centric syntax, but the same attributes and methods are modeled in python.
+
+## Descriptive videos.
+1) First we got see an animated heatmap.
+   Later we will review "simSystemWithTelemetry" on how it writes to shared memory.
+2) Review and execute the python and cpp programs for accessing shared memory.
+3) Review the "simSystemWithTelemetry" cpp code.
+4) Review the animate python code.
 
 ## Step 1: Enable GitHub Pages
 
