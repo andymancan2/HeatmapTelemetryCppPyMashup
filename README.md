@@ -87,12 +87,12 @@ This class is utilized in animate.py for displaying heatmaps.
    Bits are set in the telemetry at different rates, so the heatmap will have different colors.   
 * J: Loop thru 64 frames.
    This loop will compute bit counts and update the heatmap thru matplolib library.
-   Matplotlib details can be referenced hear: [heatmap](https://matplotlib.org/stable/gallery/images_contours_and_fields/image_annotated_heatmap.html
+   Matplotlib details can be referenced here: [heatmap](https://matplotlib.org/stable/gallery/images_contours_and_fields/image_annotated_heatmap.html
 )
 ## Descriptive videos.
 1) First we got see an animated heatmap.
    Later we will review "simSystemWithTelemetry" on how it writes to shared memory.
-2) Review and execute the python and cpp programs for accessing shared memory.
+2) Review and execute the python and cpp programs for testing shared memory.
 3) Review the "simSystemWithTelemetry" cpp code.
 4) Review the animate python code.
 
