@@ -77,10 +77,18 @@ This class is utilized in animate.py for displaying heatmaps.
 * F) Reader construction.
     Note cppReader/pyreader.py will fail if the shared memory has not been written.
 	Thus running cppReader/pyreader.py two times in a row will fail.
-* J) ~rshm() destructor
+* J) ~rshm() destructor.
     Note the shared memory is unlinked, thus removed.
 ## simSystemWithTelemetry sequence diagram including animation.
 ![simSystem sequence diagram](simSystem_sequence_diagram.jpg)
+* D: simSystem()
+   Start 8 threads of execution.  Each thread will have a single row of 8 entries per frame.
+* E: tWork()
+   Bits are set in the telemetry at different rates, so the heatmap will have different colors.   
+* J: Loop thru 64 frames.
+   This loop will compute bit counts and update the heatmap thru matplolib library.
+   Matplotlib details can be referenced hear: [heatmap](https://matplotlib.org/stable/gallery/images_contours_and_fields/image_annotated_heatmap.html
+)
 ## Descriptive videos.
 1) First we got see an animated heatmap.
    Later we will review "simSystemWithTelemetry" on how it writes to shared memory.
