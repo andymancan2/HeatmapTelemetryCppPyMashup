@@ -79,6 +79,8 @@ This class is utilized in animate.py for displaying heatmaps.
 	Thus running cppReader/pyreader.py two times in a row will fail.
 * J) ~rshm() destructor
     Note the shared memory is unlinked, thus removed.
+## simSystemWithTelemetry sequence diagram including animation.
+![simSystem sequence diagram](simSystem_sequence_diagram.jpg)
 ## Descriptive videos.
 1) First we got see an animated heatmap.
    Later we will review "simSystemWithTelemetry" on how it writes to shared memory.
