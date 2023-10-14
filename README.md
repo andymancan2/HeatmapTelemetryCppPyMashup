@@ -67,7 +67,7 @@ This class is utilized in simSystemWithTelemety for bit counts of telemetry data
 This class is utilized in test programs pyreader.py and cppReader for testing an incrementing pattern.
 This class is utilized in animate.py for displaying heatmaps.
 ## Test shared memory sequence diagram.
-![test sequence diagram](test_sequence_diagram.shm)
+![test sequence diagram](test_sequence_diagram.jpg)
 ## Descriptive videos.
 1) First we got see an animated heatmap.
    Later we will review "simSystemWithTelemetry" on how it writes to shared memory.
