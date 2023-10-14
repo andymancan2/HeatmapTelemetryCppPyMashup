@@ -54,20 +54,31 @@ The example heatmap below is telemetry data for the 64th frame of "simSystemWith
 ## UML class diagram
 This diagram is cpp centric syntax, but the same attributes and methods are modeled in python.
 ![class diagram](shm_class_diagram.jpg)
-### wshm == Write shared memory.
+* wshm == Write shared memory.
 The constructor is convenient to default shared memory attributes except filename and size.
-### rshm == Read shared memory.
+* rshm == Read shared memory.
 The constructor is convenient to default shared memory attributes except filename and size.
-### Telemetry == Grouping of constants describing the telemetry data structure.
+* Telemetry == Grouping of constants describing the telemetry data structure.
 In c++ these constants are in a namespace, while in a class for python.
-### writer == A wshm generalization using Telemetry constants.
+* writer == A wshm generalization using Telemetry constants.
 This class is utilized in test programs pywriter.py cppWriter for testing an incrementing pattern.
 This class is utilized in simSystemWithTelemety for bit counts of telemetry data.
-### reader == A rshm generalization using Telemetry constants.
+* reader == A rshm generalization using Telemetry constants.
 This class is utilized in test programs pyreader.py and cppReader for testing an incrementing pattern.
 This class is utilized in animate.py for displaying heatmaps.
 ## Test shared memory sequence diagram.
 ![test sequence diagram](test_shm_sequence_diagram.jpg)
+* A) Writer construction.
+    Note cppWriter/pywriter.py programs will fail if the shared memory has already been created.
+	Thus running cppWriter/pywriter.cpp two times in a row will fail.
+* E) ~wshm() destructor.
+    Note the cppwriter/pywriter.py programs will terminate with the shared memory written.
+    Note python code required: "resource_tracker.unregister(self.shm._name, 'shared_memory')" statement.	
+* F) Reader construction.
+    Note cppReader/pyreader.py will fail if the shared memory has not been written.
+	Thus running cppReader/pyreader.py two times in a row will fail.
+* J) ~rshm() destructor
+    Note the shared memory is unlinked, thus removed.
 ## Descriptive videos.
 1) First we got see an animated heatmap.
    Later we will review "simSystemWithTelemetry" on how it writes to shared memory.
