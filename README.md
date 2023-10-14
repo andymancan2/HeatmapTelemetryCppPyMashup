@@ -54,7 +54,20 @@ The example heatmap below is telemetry data for the 64th frame of "simSystemWith
 ## UML class diagram
 This diagram is cpp centric syntax, but the same attributes and methods are modeled in python.
 ![class diagram](shm_class_diagram.jpg)
-
+### wshm == Write shared memory.
+The constructor is convenient to default shared memory attributes except filename and size.
+### rshm == Read shared memory.
+The constructor is convenient to default shared memory attributes except filename and size.
+### Telemetry == Grouping of constants describing the telemetry data structure.
+In c++ these constants are in a namespace, while in a class for python.
+### writer == A wshm generalization using Telemetry constants.
+This class is utilized in test programs pywriter.py cppWriter for testing an incrementing pattern.
+This class is utilized in simSystemWithTelemety for bit counts of telemetry data.
+### reader == A rshm generalization using Telemetry constants.
+This class is utilized in test programs pyreader.py and cppReader for testing an incrementing pattern.
+This class is utilized in animate.py for displaying heatmaps.
+## Test shared memory sequence diagram.
+![test sequence diagram](test_sequence_diagram.shm)
 ## Descriptive videos.
 1) First we got see an animated heatmap.
    Later we will review "simSystemWithTelemetry" on how it writes to shared memory.
