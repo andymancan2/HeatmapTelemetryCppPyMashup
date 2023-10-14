@@ -53,6 +53,7 @@ The example heatmap below is telemetry data for the 64th frame of "simSystemWith
 
 ## UML class diagram
 This diagram is cpp centric syntax, but the same attributes and methods are modeled in python.
+![class diagram](shm_class_diagram.jpg)
 
 ## Descriptive videos.
 1) First we got see an animated heatmap.
