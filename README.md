@@ -21,6 +21,8 @@ This software is currently tested with ubuntu.
   Link to docs.github.com for further explanations.
   Encourage users to open new tabs for steps!
 -->
+## Author
+Andrew Louder
 ## What is telemetry?
 Telemetry automatically collects, transmits and measures data from ***remote sources***,
 using sensors and other devices to collect data. 
@@ -89,6 +91,8 @@ This class is utilized in animate.py for displaying heatmaps.
    This loop will compute bit counts and update the heatmap thru matplolib library.
    Matplotlib details can be referenced here: [heatmap](https://matplotlib.org/stable/gallery/images_contours_and_fields/image_annotated_heatmap.html
 )
+## Python documentation
+![html](html/index.html)
 ## Descriptive videos.
 1) First we got see an animated heatmap.
    Later we will review "simSystemWithTelemetry" on how it writes to shared memory.
