@@ -93,7 +93,7 @@ This class is utilized in animate.py for displaying heatmaps.
 )
 ## Python documentation
 [xxx](C:/github/HeatmapTelemetryCppPyMashup/py/html/index.html)
-[html](https://github.com/andymancan2/HeatmapTelemetryCppPyMashup/tree/Version1/py/html/index.html)
+[html](https://github.com/andymancan2/HeatmapTelemetryCppPyMashup/tree/Version1/)
 ## Descriptive videos.
 1) First we got see an animated heatmap.
    Later we will review "simSystemWithTelemetry" on how it writes to shared memory.
