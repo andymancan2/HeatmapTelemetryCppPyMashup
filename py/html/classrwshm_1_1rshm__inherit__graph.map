@@ -1,0 +1,4 @@
+<map id="rwshm.rshm" name="rwshm.rshm">
+<area shape="rect" id="node1" title="rshm == read shared memory" alt="" coords="10,5,113,32"/>
+<area shape="rect" id="node2" href="$classrwshm_1_1reader.html" title="Reader for reading telemetry data shared memory to compute bit counts." alt="" coords="5,80,117,107"/>
+</map>

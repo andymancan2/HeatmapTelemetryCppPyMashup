@@ -1,7 +1,10 @@
-## @package animate
-# Animate 64 frames based matplotlib example.
+## @file animate.py
+#Script to display heatmaps of telemetry data in shared memory.
+
 # https://matplotlib.org/stable/gallery/images_contours_and_fields/image_annotated_heatmap.html
 # 
+
+##! @cond Doxygen_Suppress
 
 import matplotlib.pyplot as plt
 import matplotlib.widgets as widget
@@ -78,19 +81,14 @@ def heatmap(data, row_labels, col_labels, ax=None,
     return im, cbar
 
 np.random.seed(19680801)
-#MAX_UINT32_NOT_INCLUSIVE = int((2**32))
 global treader
 
-## The plot figure.
-global fig
-## The plot axis.
-global ax
-## The plot figure size.
-global figsize
+##! \{
 fig, ax = plt.subplots(figsize=(16, 12)) ## Figure size
 fig.subplots_adjust(bottom=0.2) ## Adjust the bottom.
+##! \}
 ## Create the telemetry reader of shared memory.
-treader = reader() #rwshm.reader("telemetry", telemetry.kTotalByteSize)
+treader = reader()
 
 ## Create X axis labels.
 xlabels = [f"{i} T" for i in range(8)] 
@@ -98,12 +96,6 @@ xlabels = [f"{i} T" for i in range(8)]
 ylabels = [f"{i} E" for i in range(8)] 
 
 treader.clearTelemetry()
-## The heatmap image.
-global hm_im
-## The heatmap colorbar.
-global hm_cbar
-## @var cmap The colormap
-global cmap
 hm_im, hm_cbar = heatmap(treader.bitCounts, ## Create heatmap image and color bar legend.
                        xlabels, 
                        ylabels, 
@@ -138,3 +130,5 @@ for i in range(telemetry.kMaxFrames):
 fig.tight_layout()
 plt.show()
 del treader
+
+//! @endcond

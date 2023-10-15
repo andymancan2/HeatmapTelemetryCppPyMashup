@@ -1,5 +1,6 @@
-## @package rwshm - read write shared memory.
-# `
+## @file rwshm.py
+# Provides classes for accessing shared memory: wshm, writer, rshm, reader.
+ 
 
 from multiprocessing import Process
 from multiprocessing.shared_memory import SharedMemory
