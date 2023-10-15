@@ -92,7 +92,7 @@ This class is utilized in animate.py for displaying heatmaps.
    Matplotlib details can be referenced here: [heatmap](https://matplotlib.org/stable/gallery/images_contours_and_fields/image_annotated_heatmap.html
 )
 ## Python documentation
-[xxx](file:///C:/github/HeatmapTelemetryCppPyMashup/py/html/index.html)
+[xxx](C:/github/HeatmapTelemetryCppPyMashup/py/html/index.html)
 [html](https://github.com/andymancan2/HeatmapTelemetryCppPyMashup/tree/Version1/py/html/index.html)
 ## Descriptive videos.
 1) First we got see an animated heatmap.
