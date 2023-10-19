@@ -7,7 +7,6 @@ from multiprocessing.shared_memory import SharedMemory
 from multiprocessing import shared_memory, resource_tracker
 import numpy as np
 
-#import telemetry
 from telemetry import *
 
 ## rshm == read shared memory
@@ -34,6 +33,7 @@ class rshm:
     ## The destructor
     # @param self The object pointer
     def __del__(self):
+        print("rshm destructor called.")
         self.shm.close();
         self.shm.unlink();
 
@@ -63,6 +63,7 @@ class wshm:
     ## The destructor
     # @param self The object pointer
     def __del__(self):
+        print("wshm destructor called.")
         self.shm.close();
         # The following statement needed so writing process can terminate
         # with shared memory in tact for later reading.
@@ -78,6 +79,7 @@ class writer(wshm):
     ## The destructor.
     # @param self The object pointer
     def __del__(self):
+       print("writer destructor called.")
        wshm.__del__(self)
 
     ## Method for simple initialization for later verification.
@@ -96,6 +98,7 @@ class reader(rshm):
     ## The destructor
     # @param self The object pointer
     def __del__(self):
+       print("reader destructor called.")
        rshm.__del__(self)
 
     ## Initialize the bit counts to zero.

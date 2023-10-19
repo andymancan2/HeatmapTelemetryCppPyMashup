@@ -1,3 +1,6 @@
+//! @file rwshm.cpp
+//! Method class details for reading and writing shared memory.
+//! \author Andrew Louder
 #include <iostream>
 #include <iomanip>
 #include "rwshm.h"

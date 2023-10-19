@@ -1,10 +1,17 @@
 ## @file pywriter.py
 # Script to write an incrementing pattern to shared memory.
 
-from telemetry import *
 from rwshm import *
 
-w = writer() #("telemetry", telemetry.kTotalByteSize)
-w.initIncPattern()
+## main()
+def main():
+   """
+   Instaniate a writer class, then call a method to
+   initialize shared memory with an incrementing pattern.
+   """
+   w = writer()
+   w.initIncPattern()
 
-del writer
+   del w
+
+main()

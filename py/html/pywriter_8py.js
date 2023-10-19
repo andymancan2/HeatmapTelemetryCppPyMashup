@@ -1,4 +1,4 @@
 var pywriter_8py =
 [
-    [ "w", "pywriter_8py.html#a2c833198a3095a675362e2fa845a7435", null ]
+    [ "main", "pywriter_8py.html#a851216ed2dd5fa75563fe88d7e17a255", null ]
 ];

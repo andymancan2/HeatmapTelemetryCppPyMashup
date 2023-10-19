@@ -82,7 +82,7 @@ $(document).ready(function(){initNavTree('pywriter_8py.html',''); initResizable(
 
 <div class="header">
   <div class="summary">
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">pywriter.py File Reference</div>  </div>
 </div><!--header-->
@@ -91,15 +91,48 @@ $(document).ready(function(){initNavTree('pywriter_8py.html',''); initResizable(
 <p>Script to write an incrementing pattern to shared memory.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a2c833198a3095a675362e2fa845a7435"><td class="memItemLeft" align="right" valign="top"><a id="a2c833198a3095a675362e2fa845a7435"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>pywriter.w</b> = writer()</td></tr>
-<tr class="separator:a2c833198a3095a675362e2fa845a7435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a851216ed2dd5fa75563fe88d7e17a255"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pywriter_8py.html#a851216ed2dd5fa75563fe88d7e17a255">pywriter.main</a> ()</td></tr>
+<tr class="memdesc:a851216ed2dd5fa75563fe88d7e17a255"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="pywriter_8py.html#a851216ed2dd5fa75563fe88d7e17a255" title="main()">main()</a>  <a href="pywriter_8py.html#a851216ed2dd5fa75563fe88d7e17a255">More...</a><br /></td></tr>
+<tr class="separator:a851216ed2dd5fa75563fe88d7e17a255"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Script to write an incrementing pattern to shared memory. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a851216ed2dd5fa75563fe88d7e17a255"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a851216ed2dd5fa75563fe88d7e17a255">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def pywriter.main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="pywriter_8py.html#a851216ed2dd5fa75563fe88d7e17a255" title="main()">main()</a> </p>
+<pre class="fragment">Instaniate a writer class, then call a method to
+initialize shared memory with an incrementing pattern.
+</pre> <div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">def </span>main():</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;   <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="stringliteral">   Instaniate a writer class, then call a method to</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="stringliteral">   initialize shared memory with an incrementing pattern.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="stringliteral">   &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;   w = writer()</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;   w.initIncPattern()</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;   del w</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;main()</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

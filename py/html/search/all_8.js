@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['printbitcounts_16',['printBitCounts',['../classrwshm_1_1reader.html#a7b4542d316acef45711e6c7183902930',1,'rwshm::reader']]],
-  ['pyreader_2epy_17',['pyreader.py',['../pyreader_8py.html',1,'']]],
-  ['pywriter_2epy_18',['pywriter.py',['../pywriter_8py.html',1,'']]]
+  ['main_18',['main',['../animate_8py.html#a4f02280f52e1a855e5fd49cb7a67d526',1,'animate.main()'],['../pyreader_8py.html#a863cdef82a6463a22ef415c287a56645',1,'pyreader.main()'],['../pywriter_8py.html#a851216ed2dd5fa75563fe88d7e17a255',1,'pywriter.main()']]]
 ];

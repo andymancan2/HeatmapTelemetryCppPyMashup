@@ -1,9 +1,8 @@
-#include "utillib.h"
+//! @file utillib.cpp
+//! General utility details.
+//! \author Andrew Louder
 
-void hwTst( void )
-{
-    printf("hwTst\n");
-}
+#include "utillib.h"
 
 void sleepms( const unsigned int ms )
 {

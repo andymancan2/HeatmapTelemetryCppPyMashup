@@ -1,3 +1,6 @@
+//! @file ktelemetry.h
+//! Constants describing telemetry structure.
+//! @author Andrew Louder
 #ifndef KTELEMETRY_H
 #define KTELEMETRY_H
 

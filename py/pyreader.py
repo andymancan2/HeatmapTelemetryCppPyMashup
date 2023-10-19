@@ -3,8 +3,17 @@
 
 from rwshm import *
 
-r = reader() #("/telemetry", telemetry.kTotalByteSize)
-print("Verify = %r" % r.verifyIncPattern())
-del reader
+## main()
+def main():
+   """
+   Instatiate a reader object and call method to verify
+   an incrementing pattern in shared memory.
+   """
+   r = reader() 
+   print("Verify = %r" % r.verifyIncPattern())
+   #del reader
+   del r
+
+main()
 
 

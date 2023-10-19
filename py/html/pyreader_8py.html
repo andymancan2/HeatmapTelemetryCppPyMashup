@@ -82,7 +82,7 @@ $(document).ready(function(){initNavTree('pyreader_8py.html',''); initResizable(
 
 <div class="header">
   <div class="summary">
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">pyreader.py File Reference</div>  </div>
 </div><!--header-->
@@ -91,15 +91,50 @@ $(document).ready(function(){initNavTree('pyreader_8py.html',''); initResizable(
 <p>Script to verify an incrementing pattern in shared memory.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:adbf0c1e2f28e2a098da1fd30fd2e442e"><td class="memItemLeft" align="right" valign="top"><a id="adbf0c1e2f28e2a098da1fd30fd2e442e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>pyreader.r</b> = reader()</td></tr>
-<tr class="separator:adbf0c1e2f28e2a098da1fd30fd2e442e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a863cdef82a6463a22ef415c287a56645"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pyreader_8py.html#a863cdef82a6463a22ef415c287a56645">pyreader.main</a> ()</td></tr>
+<tr class="memdesc:a863cdef82a6463a22ef415c287a56645"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="pyreader_8py.html#a863cdef82a6463a22ef415c287a56645" title="main()">main()</a>  <a href="pyreader_8py.html#a863cdef82a6463a22ef415c287a56645">More...</a><br /></td></tr>
+<tr class="separator:a863cdef82a6463a22ef415c287a56645"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Script to verify an incrementing pattern in shared memory. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a863cdef82a6463a22ef415c287a56645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a863cdef82a6463a22ef415c287a56645">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def pyreader.main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="pyreader_8py.html#a863cdef82a6463a22ef415c287a56645" title="main()">main()</a> </p>
+<pre class="fragment">Instatiate a reader object and call method to verify
+an incrementing pattern in shared memory.
+</pre> <div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">def </span>main():</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;   <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="stringliteral">   Instatiate a reader object and call method to verify</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="stringliteral">   an incrementing pattern in shared memory.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="stringliteral">   &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;   r = reader() </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;   print(<span class="stringliteral">&quot;Verify = %r&quot;</span> % r.verifyIncPattern())</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;   <span class="comment">#del reader</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;   del r</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;main()</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

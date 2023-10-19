@@ -1,6 +1,6 @@
 var files_dup =
 [
-    [ "animate.py", "animate_8py.html", null ],
+    [ "animate.py", "animate_8py.html", "animate_8py" ],
     [ "pyreader.py", "pyreader_8py.html", "pyreader_8py" ],
     [ "pywriter.py", "pywriter_8py.html", "pywriter_8py" ],
     [ "rwshm.py", "rwshm_8py.html", [

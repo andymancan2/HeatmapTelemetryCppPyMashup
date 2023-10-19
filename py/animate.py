@@ -4,7 +4,6 @@
 # https://matplotlib.org/stable/gallery/images_contours_and_fields/image_annotated_heatmap.html
 # 
 
-##! @cond Doxygen_Suppress
 
 import matplotlib.pyplot as plt
 import matplotlib.widgets as widget
@@ -80,55 +79,92 @@ def heatmap(data, row_labels, col_labels, ax=None,
 
     return im, cbar
 
-np.random.seed(19680801)
-global treader
+global gFig, gAx, gTeleReader
+global gHeatmapImage, gHeatmapColorbar
 
-##! \{
-fig, ax = plt.subplots(figsize=(16, 12)) ## Figure size
-fig.subplots_adjust(bottom=0.2) ## Adjust the bottom.
-##! \}
-## Create the telemetry reader of shared memory.
-treader = reader()
+## Initialize globals.
+def initGlobals():
+   """
+   Initialize the globals for this script.
+   """
+   global gFig, gAx, gTeleReader
+   fig, ax = plt.subplots(figsize=(16, 12)) ## Figure size
+   ## Figure member.
+   gFig = fig 
+   ## Axis member.
+   gAx   = ax 
+   gFig.subplots_adjust(bottom=0.2) ## Adjust the bottom.
+   ## Create the telemetry reader of shared memory.
+   gTeleReader = reader()
 
-## Create X axis labels.
-xlabels = [f"{i} T" for i in range(8)] 
-## Create Y axis labels
-ylabels = [f"{i} E" for i in range(8)] 
 
-treader.clearTelemetry()
-hm_im, hm_cbar = heatmap(treader.bitCounts, ## Create heatmap image and color bar legend.
+## Open the heatmap graph.
+def openGraph():
+   """
+   Open the heatmap graph.
+   """
+   global gFig, gAx, gTeleReader
+   global gHeatmapImage, gHeatmapColorbar
+   # Create X axis labels.
+   xlabels = [f"{i} T" for i in range(8)] 
+   # Create Y axis labels
+   ylabels = [f"{i} E" for i in range(8)] 
+
+   gTeleReader.clearTelemetry()
+   hm_im, hm_cbar = heatmap(gTeleReader.bitCounts, ## Create heatmap image and color bar legend.
                        xlabels, 
                        ylabels, 
-                       ax = ax, 
+                       ax = gAx, 
                        cmap = "rainbow", ##The colormap
                        cbarlabel = "            Bit count") ## Color bar label.
-ax.xaxis.label.set_size(24)     # change xlabel size
-ax.yaxis.label.set_size(24)     # change ylabel size
-ax.title.set_size(32)           # change subplot title size
-fig.suptitle('Animate Telmetry', fontsize=32)
-ax.set_xlabel('Entries per thread', fontsize=24)
-ax.set_ylabel('Threads', fontsize=24)
-plt.xticks(fontsize=16) ## Set the x axis font size.
-plt.yticks(fontsize=16) ## Set the y axis font size.
+   ## Heatmap image.
+   gHeatmapImage = hm_im
+   ## Heatmap color bar.
+   gHeatmapColorbar = hm_cbar
+   gAx.xaxis.label.set_size(24)     # change xlabel size
+   gAx.yaxis.label.set_size(24)     # change ylabel size
+   gAx.title.set_size(32)           # change subplot title size
+   gFig.suptitle('Animate Telmetry', fontsize=32)
+   gAx.set_xlabel('Entries per thread', fontsize=24)
+   gAx.set_ylabel('Threads', fontsize=24)
+   plt.xticks(fontsize=16) ## Set the x axis font size.
+   plt.yticks(fontsize=16) ## Set the y axis font size.
 
-print( "telemetry.kNumThreads = %d" % telemetry.kNumThreads)
-print( "telemetry.kNumEntriesPerThread = %d" % telemetry.kNumEntriesPerThread)
-print( "telemetry.kNumEntries = %d" % telemetry.kNumEntries)
-plt.ion
-plt.show
-#sampleIdx = 0
-ax.set_title(f"frame 0", fontsize=24)
-fig.tight_layout()
-# The for loop below is where the animation happens.
-for i in range(telemetry.kMaxFrames):
-   treader.gatherTelemetryBitCounts( i )
-   hm_im.set_data( treader.bitCounts )
-   hm_im.set_clim( 0, treader.bitCounts.max() )
-   ax.set_title(f"frame {i}", fontsize=24)
-   plt.pause(0.001)
+## Animate the heatmap.
+def animate():
+   """
+   Animate all frames of the telemetry data.
+   """
+   global gFig, gAx, gTeleReader
+   global gHeatmapImage, gHeatmapColorbar
+   print( "telemetry.kNumThreads = %d" % telemetry.kNumThreads)
+   print( "telemetry.kNumEntriesPerThread = %d" % telemetry.kNumEntriesPerThread)
+   print( "telemetry.kNumEntries = %d" % telemetry.kNumEntries)
+   plt.ion
+   plt.show
+   gAx.set_title(f"frame 0", fontsize=24)
+   gFig.tight_layout()
+   # The for loop below is where the animation happens.
+   for i in range(telemetry.kMaxFrames):
+      gTeleReader.gatherTelemetryBitCounts( i )
+      gHeatmapImage.set_data( gTeleReader.bitCounts )
+      gHeatmapImage.set_clim( 0, gTeleReader.bitCounts.max() )
+      gAx.set_title(f"frame {i}", fontsize=24)
+      plt.pause(0.001)
 
-fig.tight_layout()
-plt.show()
-del treader
+   gFig.tight_layout()
+   plt.show()
 
-//! @endcond
+## main body of script.
+def main():
+   """
+   Main body of script.
+   """
+   initGlobals()
+   openGraph()
+   animate()
+
+main()
+
+
+del gTeleReader
