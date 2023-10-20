@@ -1,5 +1,5 @@
-## @package telemetry
-# `
+## @file telemetry.py
+# Constants for describing telemetry data.`
 
 ## Grouping of constants for telemetry data.
 # Kind of similar to a namespace in C++.

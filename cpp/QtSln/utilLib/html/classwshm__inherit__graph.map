@@ -1,0 +1,4 @@
+<map id="wshm" name="wshm">
+<area shape="rect" id="node1" title="wshm == Write shared memory." alt="" coords="5,5,67,32"/>
+<area shape="rect" id="node2" href="$classwriter.html" title="A derived shared memory class for writing." alt="" coords="6,80,66,107"/>
+</map>

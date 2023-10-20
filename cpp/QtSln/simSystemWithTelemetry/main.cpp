@@ -1,3 +1,19 @@
+//! @file main.cpp
+//! @author Andrew Louder
+//! @mainpage The main() for the simSystemWithTelemetry executable.
+//! @section intro_sec Introduction
+//! Simulates a system with telemerty.
+//! Telemetry is raw data that we want to visualize to better understand its
+//! meaning. Samples are taken at a periodic rate to animate and thus observe
+//! changes.
+//! The "simSystemWithTelemetry" is an imaginary system with telemetry data.
+//! There are 8 threads with 8 entryies per thread, thus 64 32-bit
+//! entries per sample(frame).
+//! There are a total of 64 samples(frames) taken.
+//! To generate a color we count the #'s of 1's(bits) in a 32-bit entry,
+//! thus color will increase over time as the 1's are increased.
+
+
 #include <iostream>
 #include <thread>
 #include <atomic>
@@ -82,8 +98,10 @@ void simSystem( void )
     }
 }
 
-//! Main the entry point for starting the program.
-int main()
+//! main() Simulates a system with telemerty.
+//! \param argc The argument count.
+//! \param argv A list of argume
+int main( int argc, char *argv[] )
 {
     cout << "simSystemWithTelemetry Hello World!" << endl;
     simSystem();

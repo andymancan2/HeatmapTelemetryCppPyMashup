@@ -1,3 +1,10 @@
+//! \file utillib.h
+//! \author Andrew Louder
+//! \mainpage The top-level header file for this library is utillib.h
+//! \section intro_sec Introduction
+//! General utilities.
+//!
+
 #ifndef UTILLIB_H
 #define UTILLIB_H
 
@@ -11,7 +18,8 @@
 #include "ktelemetry.h"
 
 //! Sleep for milliseconds.
-//! \param ms Milliseconds
+//! \param ms Milliseconds.
+//! \return none
 void sleepms( const unsigned int ms );
 
 //! A place holder class.

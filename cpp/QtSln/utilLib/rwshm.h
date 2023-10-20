@@ -1,3 +1,6 @@
+//! @file rwshm.h
+//! Class definitions for reading and writing shared memory.
+//! @author Andrew Louder
 #ifndef RWSHM_H
 #define RWSHM_H
 
@@ -29,6 +32,7 @@ public:
     //! \param shmOpenFlag
     //! \param shmMapProt
     //! \param shmOpenMode
+    //! \public
     wshm( const char* shmMapFile="/shmem-example",
          size_t shmValueSz=3,
          int shmOpenFlag=O_CREAT | O_EXCL | O_RDWR,
@@ -36,9 +40,12 @@ public:
          mode_t shmOpenMode=0600 );
 
     //! Returns a pointer to shared memory.
-    uint32_t * getMapPtr( void );
+    //! \return Unsigned 32-bit pointer.
+    //! \public \memberof wshm
+    uint32_t * getMapPtr();
 
     //! The destructor.
+    //! \public \memberof wshm
     virtual ~wshm();
 };
 
@@ -47,18 +54,22 @@ class writer : public wshm
 {
 public:
     //! The constructor encapsulating shared memory parameters.
+    //! \public \memberof writer
     writer();
 
     //! The vitual destructor.
+    //! \public \memberof writer
     virtual ~writer();
 
     //! Initialize an incrementing pattern across shared memory for verification.
+    //! \public \memberof writer
     void initIncPattern( void );
 
-    //! Intialize a shared memory entry by thread id and entry idx.
+    //! Initialize a shared memory entry by thread id and entry idx.
     //! \param threadId  Thread identifier
     //! \param entryIdx  Entry index
     //! \param value  The value to set in shared memory.
+    //! \public \memberof writer
     void initThreadEntry( uint8_t threadId, uint8_t entryIdx, uint32_t value );
 };
 
@@ -80,6 +91,7 @@ public:
     //! \param shmOpenFlag
     //! \param shmMapProt
     //! \param shmOpenMode
+    //! \public \memberof rshm
     rshm( const char* shmMapFile="/shmem-example",
           size_t shmSz=3,
          int shmOpenFlag=O_RDONLY,
@@ -87,10 +99,13 @@ public:
          mode_t shmOpenMode=0666 );
 
     //! Get the shared memory pointer.
+    //! \return A unsigned 32-bit pointer.
+    //! \public \memberof rshm
     uint32_t * getMapPtr( void );
 
     //! The destructor.
-    virtual ~rshm();
+    //! \public \memberof rshm
+    virtual ~rshm( void );
 };
 
 //! A derived shared memory class for reading.
@@ -101,18 +116,25 @@ class reader : public rshm
 
 public:
     //! The constructor to encapsulating the shared memory parameters.
-    reader();
+    //! \public \memberof reader
+    reader( void );
 
-    //! Gather bit counts for a numer of samples(frames).
+    //! Gather bit counts for a number of samples(frames).
+    //! \param numSamples number of samples(frames).
+    //! \public \memberof reader
     void gatherTelemetryBitCounts( uint32_t numSamples );
 
     //! Verify an incrementing pattern in shared memory.
-    bool verifyIncPattern( void );
+    //! \return Verify bool result.
+    //! \public \memberof reader
+    bool verifyIncPattern();
 
     //! Print bit counts.
-    void printBitCounts( void );
+    //! \public \memberof reader
+    void printBitCounts();
 
     //! The destructor.
+    //! \public \memberof reader
     virtual ~reader();
 };
 
