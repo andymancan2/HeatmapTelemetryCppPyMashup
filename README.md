@@ -43,7 +43,7 @@ The "simSystemWithTelemetry" is an imaginary system with telemetry data.
 * There are a total of 64 samples(frames) taken.
 * To generate a color we count the #'s of 1's(bits) in the 32-bit entry, thus color will increase over time as the 1's are increased.
 ### Animated heatmap
-![animated heatmap](heatmap.gif)
+![animated heatmap](Heatmap.gif)
 ### Example heatmap
 The example heatmap below is telemetry data for the 64th frame of "simSystemWithTelemetry".
 ![example heatmap](Heatmap.jpg)
