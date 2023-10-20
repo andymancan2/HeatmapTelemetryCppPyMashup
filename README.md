@@ -7,7 +7,9 @@
 # GitHub Page for displaying Heatmaps of telemetry data with cpp + python via shared memory.
 
 10/19/23 This software is currently tested with ubuntu.
-
+This software is not a hardened library for re-use, but oriented for instructional and
+inspirational purposes.  Your needs will need to be customized, but reviewing this code
+may give you ideas on how to solve your specific visualization needs.
 </header>
 
 <!--
@@ -40,6 +42,8 @@ The "simSystemWithTelemetry" is an imaginary system with telemetry data.
 * There are 8 threads with 8 entryies per thread, thus 64 32-bit entries per sample(frame).
 * There are a total of 64 samples(frames) taken.
 * To generate a color we count the #'s of 1's(bits) in the 32-bit entry, thus color will increase over time as the 1's are increased.
+### Animated heatmap
+![animated heatmap](heatmap.gif)
 ### Example heatmap
 The example heatmap below is telemetry data for the 64th frame of "simSystemWithTelemetry".
 ![example heatmap](Heatmap.jpg)
@@ -90,10 +94,12 @@ The doxygen generated HTML is best viewed by first downloading this github proje
 .../HeatmapTelemetryCppPyMashup/cpp/QtSln/cppReader/html/index.html
 .../HeatmapTelemetryCppPyMashup/cpp/QtSln/simSystemWithTelemetry/html/index.html
 ## Descriptive videos.
-1) First we got see an animated heatmap.
-   Later we will review "simSystemWithTelemetry" on how it writes to shared memory.
+1) Introduction 
+   First we got see an animated heatmap.
+   Let's review this README.
 2) Review and execute the python and cpp programs for testing shared memory.
-3) Review the "simSystemWithTelemetry" cpp code.
+3) Review the "simSystemWithTelemetry" cpp code and show the steps to run the animated heatmap.
+This program generated the telemetry data showed in the heatmap.
 4) Review the animate python code.
 
 
